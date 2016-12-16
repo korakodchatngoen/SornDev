@@ -8,13 +8,13 @@
             <div class="col-xs-6 col-md-4" v-for = "list in listplay">
               <router-link :to="{ name: 'showplay', params: { play:list.name }}">
               <a class="thumbnail" style="vertical-align: middle">
-                <img :src="list.img" width="120">
+                <img :src="list.img" width="120" height="120">
               <h4>
                 {{list.name}}
               </h4>
             </a>
             </router-link>
-            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -47,5 +47,6 @@ export default {
 <style>
 .navbar{
   background-color: #1b1920;
+  border: 0px solid #000;
 }
 </style>

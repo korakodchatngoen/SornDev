@@ -7,7 +7,7 @@
           <div class="col-md-12" style="height:478px;overflow: hidden;">
             <div class="col-xs-12 col-md-9" style="padding:0px">
               <div class="embed-responsive embed-responsive-16by9" style="border:5px solid #555">
-                <iframe class="embed-responsive-item" :src="'http://www.youtube.com/embed/'+ link"  frameborder="0" allowfullscreen ></iframe>
+                <iframe class="embed-responsive-item" :src="'http://www.youtube.com/embed/'+ link + '?autoplay=1'"  frameborder="0" allowfullscreen ></iframe>
               </div>
             </div>
             <div class="col-xs-12 col-md-3 scrollbar" id="style-1">
@@ -29,6 +29,11 @@
 </template>
 
 <script>
+window.onbeforeunload = function () {
+  console.log('gg')
+  window.location.assign('http://www.w3schools.com')
+  // vm.$router.push('./mains')
+}
 import Navbar from './Navbar'
 import Banner3 from './Banner3'
 import Footers from './Footers'
@@ -52,7 +57,10 @@ export default {
     }
   },
   mounted () {
+    // var vm = this
     this.link = this.play.list[0].link
+    let vm = this
+    return vm.listplay.find(item => item.name === vm.$route.params.play)
   },
   methods: {
     setlink (link) {
